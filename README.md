@@ -60,7 +60,7 @@ function MyComponent() {
     <>
       <button onClick={() => openModal('my-modal')}>Open Modal</button>
       <button onClick={() => closeModal('my-modal')}>Close Modal</button>
-      <button onClick={closeAllModal}>Close All Modals</button>
+      <button onClick={() => closeAllModal()}>Close All Modals</button>
       <p>Modal is open: {isModalOpen('my-modal') ? 'yes' : 'no'}</p>
     </>
   );

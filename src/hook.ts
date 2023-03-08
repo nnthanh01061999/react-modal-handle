@@ -45,7 +45,7 @@ export const useModalHandle = () => {
     });
   };
 
-  const checkModalOpen = (name: string) => {
+  const isModalOpen = (name: string) => {
     return !!data?.openedModals?.includes(name);
   };
 
@@ -53,6 +53,6 @@ export const useModalHandle = () => {
     openModal,
     closeModal,
     closeAllModal,
-    checkModalOpen,
+    isModalOpen,
   };
 };
