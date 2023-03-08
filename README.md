@@ -7,8 +7,8 @@ This package helps you to control the Modal, which one opens, which one closes a
 Install react-modal-handle with npm or yarn
 
 ```bash
-    npm install --save react-modal-handle
-    yarn add react-modal-handle
+npm install --save react-modal-handle
+yarn add react-modal-handle
 ```
 
 ## Usage/Examples
@@ -112,4 +112,5 @@ export default function Example() {
   );
 }
 ```
+
 # react-modal-handle
