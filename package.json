@@ -1,8 +1,12 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nnthanh01061999/react-modal-handle.git"
+  },
   "files": [
     "dist",
     "src"
