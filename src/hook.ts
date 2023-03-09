@@ -6,10 +6,10 @@ export const useModalHandle = () => {
 
   const openModal = (name: string) => {
     if (name) {
-      if (!data.openedModals.includes(name)) {
+      if (!data.opened.includes(name)) {
         setData(prev => ({
           ...prev,
-          openedModals: [...prev.openedModals, name],
+          opened: [...prev.opened, name],
         }));
       }
     }
@@ -25,14 +25,14 @@ export const useModalHandle = () => {
       }
       await setData({
         ...data,
-        openedModals: data?.openedModals?.filter(item => item !== name),
+        opened: data?.opened?.filter(item => item !== name),
       });
     }
   };
 
   const closeAllModal = async (willCallback: boolean = true) => {
     if (willCallback) {
-      data?.openedModals?.forEach(async item => {
+      data?.opened?.forEach(async item => {
         const callback = await data.callback?.[item];
         if (callback instanceof Function) {
           await callback();
@@ -41,15 +41,16 @@ export const useModalHandle = () => {
     }
     await setData({
       ...data,
-      openedModals: [],
+      opened: [],
     });
   };
 
   const isModalOpen = (name: string) => {
-    return !!data?.openedModals?.includes(name);
+    return !!data?.opened?.includes(name);
   };
 
   return {
+    data,
     openModal,
     closeModal,
     closeAllModal,

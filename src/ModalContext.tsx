@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 
 export interface IModalConTextData {
-  openedModals: string[];
+  opened: string[];
   callback: {
     [key: string]: (() => void) | undefined;
   };
@@ -13,14 +13,14 @@ export interface IModalContextState {
 }
 
 export const ModalContext = React.createContext<IModalContextState>({
-  data: { openedModals: [], callback: {} },
+  data: { opened: [], callback: {} },
   setData: () => [],
 });
 
 export const ModalContextProvider = (props: PropsWithChildren) => {
   const { children } = props;
   const [data, setData] = React.useState<IModalConTextData>({
-    openedModals: [],
+    opened: [],
     callback: {},
   });
 

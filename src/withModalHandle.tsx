@@ -12,7 +12,7 @@ export const withModalHandle = <T extends ModalHandleProps = ModalHandleProps>(
   const ComponentWithHandler = (props: Omit<T, 'onClose'>) => {
     const { onCloseCallback } = props;
     const {
-      data: { openedModals },
+      data: { opened },
       setData,
     } = useContext(ModalContext);
 
@@ -28,14 +28,14 @@ export const withModalHandle = <T extends ModalHandleProps = ModalHandleProps>(
           ...prev,
           callback: {
             ...prev.callback,
-            [name]: openedModals.includes(name) ? onCloseCallback : undefined,
+            [name]: opened.includes(name) ? onCloseCallback : undefined,
           },
         }));
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [openedModals]);
+    }, [opened]);
 
-    return openedModals.includes(name) ? (
+    return opened.includes(name) ? (
       <Component {...(props as T)} onClose={handleClose} />
     ) : null;
   };
