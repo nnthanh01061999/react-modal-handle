@@ -7,6 +7,15 @@
     "type": "git",
     "url": "https://github.com/nnthanh01061999/react-modal-handle.git"
   },
+  "keyword": [
+    "react",
+    "modal",
+    "handle-modal",
+    "react-hooks",
+    "react-context",
+    "HOC",
+    "typescript"
+  ],
   "files": [
     "dist",
     "src"
